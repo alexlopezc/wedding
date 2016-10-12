@@ -1,0 +1,588 @@
+<!DOCTYPE HTML>
+<!--
+    Overflow by HTML5 UP
+    html5up.net | @n33co
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html ng-app="wedding.App">
+
+<head>
+    <title>NOS CASAMOS</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Carter+One" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Holtwood+One+SC" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Monoton" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quattrocento+Sans" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather+Sans" />
+    <link rel="stylesheet" href="css/animate.css">
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.scrolly.min.js"></script>
+    <script src="js/jquery.poptrox.min.js"></script>
+    <script src="js/skel.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <style>
+    .google-maps {
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50% !important;
+        height: 100% !important;
+    }
+    </style>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+</head>
+
+<body ng-controller="MainCtrl">
+
+    <!-- Header -->
+    <section id="header" class="wow rotateIn" data-wow-delay="1s">
+        <header>
+            <img src="images/logo3.png" alt="" style="width:50%" />
+        </header>
+
+    </section>
+    ,
+    <article class="container wow fadeIn" data-wow-delay="2s" style="text-align:center; padding-bottom:1em">
+        <header>
+            <div class="row">
+                <div class="3u">
+                    <div class="counter border">{{days2married}}</div>
+                    <div class="counterText border">DÍAS</div>
+                </div>
+                <div class="3u">
+                    <div class="counter border">{{hours2married}}</div>
+                    <div class="counterText border">HORAS</div>
+                </div>
+                <div class="3u">
+                    <div class="counter border">{{minutes2married}}</div>
+                    <div class="counterText border">MINUTOS</div>
+                </div>
+                <div class="3u">
+                    <div class="counter">{{secs2married}}</div>
+                    <div class="counterText">SEGUNDOS</div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <!-- Banner -->
+    <!-- <section id="banner">
+        <header>
+            <h2>¡NOS CASAMOS!</h2>
+        </header>
+        <p>Después de 13 años juntos hemos pensado </p>
+            <a href="#joinForm" class="button style2 scrolly" style="cursor:pointer">¿Te apuntas?</a>
+
+    </section>
+ -->
+
+    <!--<section id="banner" style="top: 3em">
+        <p>Porque despues de 13 años juntos... Ya era hora, ¿no? </p>
+
+    </section>
+
+    <section id="banner" style="top: 5em">
+        <p><span><img style="height: 1.1em;" src="images/plane.png"></span> 
+        ¡Porque queremos irnos de viaje!
+        <span><img style="height: 1.1em;" src="images/plane.png"></span> </p>
+    </section>
+    
+    <section id="banner" style="top: 7em">
+        <p><span><img style="height: 1.3em;" src="images/palmera.png"></span> 
+        Porque quince días más de vacaciones siempre apetecen
+        <span><img style="height: 1.3em;" src="images/palmera.png"></span> </p>
+    </section>
+
+    <section id="banner" style="top: 9em">
+        <p><span><img style="height: 1.3em;" src="images/celebration.png"></span> 
+        Pero sobretodo, porque siempre está bien encontrar una excusa para hacer una fiesta
+        <span><img style="height: 1.3em;" src="images/celebration.png"></span> </p>
+    </section>
+-->
+
+    <section id="banner" style="top:4em; line-height:2.8em">
+        <header>
+            <h2>¡NOS CASAMOS!</h2>
+        </header>
+        <p><span><img style="height: 1.1em;" src="images/clock_t.png"></span> Porque después de 13 años juntos... Ya era hora, ¿no? <span><img style="height: 1.1em;" src="images/clock_t.png"></span> </p>
+        <p><span><img style="height: 1.1em;" src="images/plane.png"></span> ¡Porque queremos irnos de viaje!
+            <span><img style="height: 1.1em;" src="images/plane.png"></span> </p>
+        <p><span><img style="height: 1.3em;" src="images/palmera.png"></span> Porque quince días más de vacaciones siempre apetecen
+            <span><img style="height: 1.3em;" src="images/palmera.png"></span> </p>
+        <p><span><img style="height: 1.3em;" src="images/celebration.png"></span> Pero sobretodo, porque siempre está bien encontrar una excusa para hacer una fiesta
+            <span><img style="height: 1.3em;" src="images/celebration.png"></span> </p>
+
+        <a href="#joinForm" class="button style2 scrolly" style="cursor:pointer; padding: 0em 2em 0em 2em; margin-top: 1em">¿Te apuntas?</a>
+    </section>
+
+    <!-- Feature 1 -->
+    <article id="first" class="container box style1 left wow fadeIn" style="margin-top:13em">
+        <div class="image fit">
+
+            <iframe style="width: 100%" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=La%20Garriga%20de%20Castelladral%2C%20Castelladral%2C%20Espa%C3%B1a&key=AIzaSyATGLWRQ_FRYE_vON2e9N2L2xpzw_bnIfk&zoom=8"></iframe>
+        </div>
+        <div class="inner">
+            <header>
+                <h2 style="text-align: center;">13 DE JUNIO DE 2015</h2>
+            </header>
+            <p style="font-size: 16px">¡Este es el día escogido! Os esperamos sobre las 17:45 en la Garriga de Castelladral. </p>
+            <p style="font-size: 16px">Habrá risas, alguna que otra lagrimilla, música, comida, bebida... Y si todo va bien... ¡También boda! </p>
+            <p style="font-size: 16px">Os agradeceremos que confirméis rellenando el formulario.</p>
+        </div>
+    </article>
+
+    <article id="first" class="container box style1 right wow fadeIn">
+        <a href="#" class="image fit"><img src="images/garriga.jpg" alt="" />
+        </a>
+
+        <div class="inner">
+            <header>
+                <h2>La Garriga de Castelladral</h2>
+            </header>
+            <p style="font-size: 16px;line-height: 23px;">Es una masía del siglo XVII construida sobre las ruinas de una edificación medieval. Buscábamos un lugar en el que construir un bonito recuerdo con vosotros. Son muchas las noches que hemos pasado en casa rurales disfrutando con familia y amigos y no podíamos escoger otro escenario para esta fiesta.</p>
+            <p style="font-size: 16px;line-height: 23px;">Posición GPS: 41.8677611, 1.7624787 </p>
+        </div>
+    </article>
+
+    <!-- Feature 2 -->
+    <article class="container box style1 left wow fadeIn">
+        <div class="image fit">
+            <a href="#" class="image fit" style="width: 100%"><img src="images/road.jpg" alt="" />
+            </a>
+        </div>
+        <div class="inner">
+            <header>
+                <h2>Logística</h2>
+            </header>
+            <p style="font-size: 16px;line-height: 23px;">Un autocar saldrá de Barcelona a las 16:00 y volverá alrededor de las 4:00.</p>
+            <p style="font-size: 16px;line-height: 23px;">Pero si lo preferís, hay hoteles y casas rurales cerca donde pasar la noche. Cuando enviéis la confirmación indicad que necesitáis alojamiento y os pasaremos algunas propuestas.</p>
+        </div>
+    </article>
+
+    <article class="container box style1 right wow fadeIn">
+        <div class="image fit">
+            <iframe style="width: 100%" width="480" height="380" src="https://embed.spotify.com/?uri=spotify:user:xocru:playlist:2zDj2swskJgmFGqzm50Wvz" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+        </div>
+        <div class="inner">
+            <header>
+                <h2>Playlist</h2>
+            </header>
+            <p style="font-size: 16px;line-height: 23px;">¡Una fiesta, no es una fiesta sin buena música!</p>
+            <p style="font-size: 16px;line-height: 23px;">Ayúdadnos a escoger las canciones que sonarán durante la noche.</p>
+            <p style="font-size: 16px;line-height: 23px;">Hemos creado una playlist de Spotify para que podáis añadir las canciones que os apetezca escuchar durante la boda . Si no tenéis cuenta, mandadnos las propuestas por correo y las añadiremos nosotros.</p>
+
+            <p style="font-size: 16px;line-height: 23px;">Ya veremos si el DJ os hace caso... ;-p.</p>
+        </div>
+    </article>
+    <!-- Portfolio -->
+    <!--<article class="container box style2">
+        <header>
+            <h2>Magnis parturient</h2>
+            <p>Justo phasellus et aenean dignissim
+                <br/> placerat cubilia purus lectus.</p>
+        </header>
+        <div class="inner gallery">
+            <div class="row 0%">
+                <div class="3u">
+                    <a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" alt="" title="Ad infinitum" />
+                    </a>
+                </div>
+                <div class="3u">
+                    <a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" alt="" title="Dressed in Clarity" />
+                    </a>
+                </div>
+                <div class="3u">
+                    <a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" alt="" title="Raven" />
+                    </a>
+                </div>
+                <div class="3u">
+                    <a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" alt="" title="I'll have a cup of Disneyland, please" />
+                    </a>
+                </div>
+            </div>
+            <div class="row 0%">
+                <div class="3u">
+                    <a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" alt="" title="Cherish" />
+                    </a>
+                </div>
+                <div class="3u">
+                    <a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" alt="" title="Different." />
+                    </a>
+                </div>
+                <div class="3u">
+                    <a href="images/fulls/07.jpg" class="image fit"><img src="images/thumbs/07.jpg" alt="" title="History was made here" />
+                    </a>
+                </div>
+                <div class="3u">
+                    <a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" alt="" title="People come and go and walk away" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    ->>
+
+    <!-- Contact -->
+    <article id="joinForm" class="container box style3 wow fadeIn">
+        <header>
+            <h2>¿Te apuntas?</h2>
+            <p ng-show="!confirmed">¡Rellenad el formulario para confirmar asistencia!
+                <br>No hace falta que rellenéis uno por persona.</p>
+            <p ng-show="confirmed">¡Ya tenemos vuestra confirmación! En breve recibiréis un email con los datos que habéis introducido, pero si no lo recibís, llámadnos o mándadnos un email.</p>
+
+            <div ng-show="confirmed" ng-bind-html="confirmationMessage"></div>
+            
+        </header>
+        <form method="post" name="joinForm" ng-show="!confirmed">
+            <div class="row 50%">
+                <div class="12u">
+                    <input type="text" class="text" name="name" placeholder="Nombres asistentes" ng-model="form.name" required title="Podéis poner más de un nombre" rel="tooltip"/>
+                </div>
+            </div>
+            <div class="row 50%">
+                <div class="12u">
+                    <input type="email" class="text" name="email" placeholder="Email (necesario para recibir la confirmación)" ng-model="form.contact" required title="Sólo tenéis que poner una dirección o no os llegará el email :-P" rel="tooltip"/>
+                </div>
+            </div>
+            <div class="row 50%">
+                <div class="6u">
+                    <input type="text" class="text" name="name" placeholder="Teléfono (opcional)" ng-model="form.phone" rel="tooltip"/>
+                </div>
+                <div class="6u">
+                    <select name="confirm" id="confirm" ng-model="form.confirm" required>
+                        <option value="">¿Vienes?</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <!--<input type="text" class="text" name="confirm" placeholder="¿Vienes?" ng-model="form.confirm" required/>-->
+                </div>
+            </div>
+            <div class="row 50%">
+                <div class="6u">
+                    <select name="bus" id="bus" ng-model="form.bus" required>
+                        <option value="">¿Necesitas autobús?</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <!--<input type="text" class="text" name="bus" placeholder="¿Necesitas autobus?" ng-model="form.bus" />-->
+                </div>
+                <div class="6u">
+                    <select name="hotel" id="hotel" ng-model="form.hotel" required>
+                        <option value="">¿Necesitas alojamiento?</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <!--<input type="text" class="text" name="hotel" placeholder="¿Necesitas alojamiento?" ng-model="form.hotel" />-->
+                </div>
+            </div>
+            <div class="row 50%">
+                <div class="12u">
+                    <textarea name="alergic" placeholder="¿Tienes alguna alergia o restricción alimentaria (celíaco, vegetariano...)?" ng-model="form.alergic"></textarea>
+                </div>
+            </div>
+            <div class="row 50%">
+                <div class="12u">
+                    <textarea name="message" placeholder="¡Dinos lo que te pase por la cabeza!" ng-model="form.message"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u">
+                    <ul class="actions">
+                        <li>
+                            <input type="submit" value="Enviar confirmación" ng-click="sendForm()" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </article>
+
+    <!-- Generic -->
+    <!--
+            <article class="container box style3">
+                <header>
+                    <h2>Generic Box</h2>
+                    <p>Just a generic box. Nothing to see here.</p>
+                </header>
+                <section>
+                    <header>
+                        <h3>Paragraph</h3>
+                        <p>This is a subtitle</p>
+                    </header>
+                    <p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
+                    habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
+                    leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
+                    amet risus elit.</p>
+                </section>
+                <section>
+                    <header>
+                        <h3>Blockquote</h3>
+                    </header>
+                    <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
+                    tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
+                </section>
+                <section>
+                    <header>
+                        <h3>Divider</h3>
+                    </header>
+                    <p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra
+                    ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+                    facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+                    tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                    posuere cubilia.</p>
+                    <hr />
+                    <p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
+                    ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+                    facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+                    tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                    posuere cubilia.</p>
+                </section>
+                <section>
+                    <header>
+                        <h3>Unordered List</h3>
+                    </header>
+                    <ul class="default">
+                        <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+                        <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+                        <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+                        <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+                    </ul>
+                </section>
+                <section>
+                    <header>
+                        <h3>Ordered List</h3>
+                    </header>
+                    <ol class="default">
+                        <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+                        <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+                        <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+                        <li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+                    </ol>
+                </section>
+                <section>
+                    <header>
+                        <h3>Table</h3>
+                    </header>
+                    <div class="table-wrapper">
+                        <table class="default">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>45815</td>
+                                    <td>Something</td>
+                                    <td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+                                    <td>29.99</td>
+                                </tr>
+                                <tr>
+                                    <td>24524</td>
+                                    <td>Nothing</td>
+                                    <td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+                                    <td>19.99</td>
+                                </tr>
+                                <tr>
+                                    <td>45815</td>
+                                    <td>Something</td>
+                                    <td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+                                    <td>29.99</td>
+                                </tr>
+                                <tr>
+                                    <td>24524</td>
+                                    <td>Nothing</td>
+                                    <td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+                                    <td>19.99</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3"></td>
+                                    <td>100.00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <header>
+                        <h3>Form</h3>
+                    </header>
+                    <form method="post" action="#">
+                        <div class="row">
+                            <div class="6u">
+                                <input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
+                            </div>
+                            <div class="6u">
+                                <input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="12u">
+                                <select name="department" id="department">
+                                    <option value="">Choose a department</option>
+                                    <option value="1">Manufacturing</option>
+                                    <option value="2">Administration</option>
+                                    <option value="3">Support</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="12u">
+                                <input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="12u">
+                                <textarea name="message" id="message" placeholder="Enter your message"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="12u">
+                                <ul class="actions">
+                                    <li><input type="submit" value="Submit" /></li>
+                                    <li><input type="reset" class="style3" value="Clear Form" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </article>
+        -->
+
+    <section id="footer">
+        <!--    <ul class="icons">
+            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a>
+            </li>
+            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a>
+            </li>
+            <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a>
+            </li>
+            <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a>
+            </li>
+            <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a>
+            </li>
+            <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a>
+            </li>
+        </ul>-->
+        <div class="copyright">
+            <ul class="menu">
+                <li>Developed by Núria & Álex</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <script src="js/init.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var targets = $('[rel~=tooltip]'),
+            target = false,
+            tooltip = false,
+            title = false;
+
+        targets.bind('mouseenter', function() {
+            target = $(this);
+            tip = target.attr('title');
+            tooltip = $('<div id="tooltip"></div>');
+
+            if (!tip || tip == '')
+                return false;
+
+            target.removeAttr('title');
+            tooltip.css('opacity', 0)
+                .html(tip)
+                .appendTo('body');
+
+            var init_tooltip = function() {
+                if ($(window).width() < tooltip.outerWidth() * 1.5)
+                    tooltip.css('max-width', $(window).width() / 2);
+                else
+                    tooltip.css('max-width', 340);
+
+                var pos_left = target.offset().left + (target.outerWidth() / 2) - (tooltip.outerWidth() / 2),
+                    pos_top = target.offset().top - tooltip.outerHeight() - 20;
+
+                if (pos_left < 0) {
+                    pos_left = target.offset().left + target.outerWidth() / 2 - 20;
+                    tooltip.addClass('left');
+                } else
+                    tooltip.removeClass('left');
+
+                if (pos_left + tooltip.outerWidth() > $(window).width()) {
+                    pos_left = target.offset().left - tooltip.outerWidth() + target.outerWidth() / 2 + 20;
+                    tooltip.addClass('right');
+                } else
+                    tooltip.removeClass('right');
+
+                if (pos_top < 0) {
+                    var pos_top = target.offset().top + target.outerHeight();
+                    tooltip.addClass('top');
+                } else
+                    tooltip.removeClass('top');
+
+                tooltip.css({
+                        left: pos_left,
+                        top: pos_top
+                    })
+                    .animate({
+                        top: '+=10',
+                        opacity: 1
+                    }, 50);
+            };
+
+            init_tooltip();
+            $(window).resize(init_tooltip);
+
+            var remove_tooltip = function() {
+                tooltip.animate({
+                    top: '-=10',
+                    opacity: 0
+                }, 50, function() {
+                    $(this).remove();
+                });
+
+                target.attr('title', tip);
+            };
+
+            target.bind('mouseleave', remove_tooltip);
+            tooltip.bind('click', remove_tooltip);
+        });
+    });
+    </script>
+</body>
+
+</html>
